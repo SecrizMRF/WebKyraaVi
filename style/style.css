@@ -1,0 +1,577 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #fff;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 5rem;
+  background-color: #f4f4f4;
+  scroll-margin-left: 15vw; /* 👈 Fix untuk masalah hyperlink offset */
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  padding-left: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;       /* selalu nempel kiri */
+  top: 0;
+  left: 0;
+  width: 15vw;   /* sidebar lebarnya 15% dari lebar layar */
+  min-width: 15vw; /* biar nggak terlalu kecil */
+  max-width: 15vw; /* biar nggak terlalu besar */
+  height: 100vh;      /* minimal biar gak terlalu kecil */
+  
+  background: #0f172a;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+  overflow-y: auto;      /* sidebar scroll sendiri kalau konten panjang */
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.prof-pic {
+  width: 40%;   /* relatif dari sidebar */
+  aspect-ratio: 1 / 1; /* biar tetap lingkaran */
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 2vh;
+}
+.prof-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* isi penuh tanpa distorsi */
+  transition: transform 0.4s ease;
+}
+.prof-pic img:hover {
+  transform: scale(1.2); /* zoom, tapi tetap di tengah */
+}
+.profile p {
+  font-size: clamp(0.7rem,2vw,1.4rem); /* sudah OK */
+  color: #ccc;
+  font-weight: 600;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem); /* sudah OK */
+}
+.menu a {
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #dfdfdf;
+  padding: 0.8em 1em;
+  transition: 0.3s;
+  font-size: inherit;
+}
+.menu a:hover {
+  color: #000000;
+  background-color: #6b00d7;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+ /* Footer */
+.sidebar footer {
+  font-size: clamp(0.6rem, 0.9vw, 1rem); /* sudah OK */
+  margin-top: auto;
+  text-align: center;
+  color: #777;
+}
+
+/* Content */
+.content {
+  padding: 32px 40px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: url("../img/bg.jpg");
+  background-size: cover;        /* gambar menutupi seluruh area */
+  background-position: center;   /* posisi gambar di tengah */
+  background-repeat: no-repeat;  /* gambar tidak diulang */
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.text-container {
+  flex: 1; /* biar bagi ruang dengan gambar */
+  display: flex;
+  flex-direction: column; /* atur anak-anak (intro + bio) jadi vertikal */
+  justify-content: center;
+}
+.intro {
+  text-align: left;
+  margin-left: 50px;
+  flex: 1;
+}
+.intro h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.intro span {
+  font-weight: bold;
+}
+.intro p {
+  margin-bottom: 24px;
+  color: #555;
+}
+.intro button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.intro button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #333;
+}
+.button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.main-pic-container {
+  flex-shrink: 0; /* jangan mengecil */
+  margin-left: 40px;
+  display: flex;
+  align-items: flex-end; /* gambar nempel ke bawah */
+  height: 100%;
+}
+
+.main-pic {
+  max-height: 100vh; /* sesuaikan ukuran */
+  width: auto;
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.main-pic img:hover {
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+.bio {
+  margin-top: 30px;
+  margin-left: 50px;
+  max-width: 600px;
+  text-align: left;
+  color: #444;
+}
+.bio h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.bio p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.quotes {
+  font-style: italic;
+  color: #000000;
+  margin-top: 10px;
+}
+
+/* Cards untuk section hobbies */
+.hobbies-section {
+  margin: 0 0 40px 15vw; /* hilangkan margin atas, samakan margin kiri */
+  text-align: center;
+  width: calc(100vw - 15vw);
+  box-sizing: border-box;
+  background: #fff;
+  padding: 32px 40px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  max-width: 100vw; /* batasi lebar maksimal */
+  overflow-x: hidden;
+}
+
+.hobbies-section,
+.section-content {
+  margin-left: 15vw;
+  width: calc(100vw - 15vw);
+  box-sizing: border-box;
+  padding: 32px 40px;
+}
+
+.hobby-cards {
+  display: flex;
+  gap: 40px;           /* perbesar jarak antar card */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hobby-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 16px;
+  width: 320px;        /* perbesar lebar card agar gambar muat */
+  transition: transform 0.2s;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hobby-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background-color: #6b00d7;
+}
+
+.hobby-card:hover h3,
+.hobby-card:hover p {
+  color: #dfdfdf;
+}
+
+.hobby-card img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border-radius: 10%;
+}
+.hobby-card h3 {
+  margin: 10px 0 8px 0;
+}
+.hobby-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Tombol Hamburger */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: clamp(1.5rem, 3vw, 3rem); /* responsif dan proporsional */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}  
+
+/* .hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+} */
+
+.section-content,
+.max-w-6xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-content {
+  margin-left: 15vw;
+  width: calc(100vw - 15vw);
+  box-sizing: border-box;
+  padding: 32px 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 1em;
+    margin: 32px auto;
+    max-width: 1200px; 
+    width: 100%;
+}
+
+thead {
+  background: linear-gradient(90deg, #6b00d7 60%, #a471f1 100%);
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+th {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.07em;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #fff5ea;
+}
+
+td {
+  color: #333;
+  vertical-align: middle;
+}
+
+td i {
+  color: #494949;
+  font-style: italic;
+}
+
+.content,
+.hobbies-section,
+.section-content {
+  margin-left: 15vw;
+  width: calc(100vw - 15vw);
+  box-sizing: border-box;
+  padding: 32px 40px;
+}
+
+footer {
+  background: #0f172a;
+  padding: 20px;
+  text-align: center;
+  margin-left: 15vw;
+  color: #d6d6d6;
+}
+
+.social-icons {
+  font-size: 0;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+  /* font-size: 0; */
+}
+
+.social-icons a:hover {
+  color: #6b00d7; /* bisa disesuaikan */
+}
+
+
+/* Responsive Mobile */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;      /* ubah jadi kolom */
+    align-items: center;         /* rata tengah */
+    justify-content: flex-start;
+    /* margin-left: 15vw; */
+    padding: 32px 10px;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    scroll-margin-left:15vw ;
+  }
+
+  #hobbies, #schedules {
+    scroll-margin-left: 15vw;
+  }
+
+  .main-pic {
+    max-width: 80vw;
+    width: 180px;
+    height: auto;
+    margin: 0 0 20px 0;          /* beri jarak bawah */
+    display: block;
+  }
+
+  .text-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .intro, .bio {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .bio {
+    margin-top: 16px;
+  }
+
+  .sidebar {
+    width: 220px;           /* lebar tetap agar tidak terlalu kecil */
+    min-width: 180px;
+    max-width: 80vw;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding: 20px 10px;     /* padding lebih kecil */
+    transform: translateX(-100%);
+    z-index: 999;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* font responsif */
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .profile {
+    margin-bottom: 20px;
+  }
+  .prof-pic {
+    width: 60%; /* lebih besar di mobile */
+    margin-bottom: 1vh;
+  }
+  .menu {
+    margin-top: 2vh;
+    font-size: inherit;
+  }
+  .menu a {
+    padding: 0.7em 0.5em;
+    font-size: inherit;
+  }
+  .sidebar footer {
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
+
+  .hobbies-section {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;   /* padding kiri-kanan lebih kecil di mobile */
+  }
+
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    margin-bottom: 18px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 8px 0;
+  }
+  td {
+    padding: 12px 16px;
+    text-align: left;
+    position: relative;
+    border: none;
+  }
+  td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #6b00d7;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.97em;
+  }
+
+  .section-content {
+    margin-left: 0;
+    width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .content,
+  .hobbies-section,
+  .section-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    padding: 32px 10px;
+    box-sizing: border-box;
+  }
+
+    footer {
+    /* background: #0f172a;
+    padding: 20px;
+    text-align: center; */
+    margin-left: 0vw;
+    /* color: #d6d6d6; */
+  }
+}
+
+@media (max-width: 768px) {
+  .hobbies-section,
+  .section-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    padding: 32px 10px;
+    box-sizing: border-box;
+  }
+}

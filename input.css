@@ -1,0 +1,34 @@
+@import "tailwindcss";
+/* @import "./style/style.css";
+@import "./style/style_index.css"; */
+
+.text-gradient-css {
+  background: linear-gradient(to right, #86efac, #34d399, #059669);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.text-gradient-html {
+  background: linear-gradient(to right, #e06518, #c23333, #7e1010);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.text-gradient-js {
+  background: linear-gradient(to right, #d1ef26, #ead408, #d2d224);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.text-gradient-tail {
+  background: linear-gradient(to right, #2626ef, #08aaea, #6c47e3);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengenal HTML, CSS, dan JavaScript | Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      #mobile-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-300">
+    <!-- AWAL HEADER -->
+    <header>
+      <aside id="sidebar" class="hidden md:flex fixed top-0 left-0 h-screen w-[15vw] min-w-[15vw] max-w-[15vw] bg-slate-900/80 backdrop-blur-md flex-col justify-start items-center py-5 overflow-y-auto transition-transform duration-300 ease-in-out z-90 rounded-b-xl">
+        <!-- Profile Section -->
+        <div class="text-center mb-8">
+          <div class="w-2/5 aspect-square rounded-full overflow-hidden mx-auto mb-4">
+            <img src="img/sidepic.jpg" alt="Foto Profil" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+          </div>
+          <p class="text-gray-300 text-[clamp(0.7rem,2vw,1.4rem)] font-semibold">KyraaaVi</p>
+        </div>
+        <!-- Menu Links -->
+        <nav class="flex flex-col text-[clamp(0.8rem,1.2vw,1.2rem)] w-full mt-3">
+          <a href="index.html" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> ??? </a>
+          <a href="not_index.html" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> My Hobbies </a>
+          <a href="not_index.html" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> Schedules </a>
+          <a href="#" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> Pengenalan HTML, CSS, JS & Tailwind </a>
+          <a href="2.html" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> Tata cara pembuatan Web </a>
+          <a href="3.html" class="text-gray-200 py-2 px-4 mx-2 mb-2 rounded-md transition-all duration-300 hover:bg-[#6b00d7] hover:text-black hover:ml-6 hover:mr-2"> Kesan & Pesan </a>
+        </nav>
+        <!-- Footer -->
+        <!-- <footer class="mt-auto text-center text-gray-500 text-[clamp(0.6rem,0.9vw,1rem)]"> © 2024 Kyra was here </footer> -->
+      </aside>
+
+      <!-- NAVBAR UNTUK MOBILE -->
+      <nav class="fixed top-0 left-0 right-0 z-40 bg-slate-900 text-gray-200 flex items-center justify-between px-6 py-4 md:hidden shadow-lg">
+        <p class="text-lg font-semibold">KyraaaVi</p>
+        <button id="menu-btn" class="focus:outline-none">
+          <!-- Icon Hamburger -->
+          <!-- <svg id="icon-hamburger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg> -->
+          <svg id="icon-hamburger"clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" 
+              viewBox="0 0 24 24" class="h-6 w-6 fill-white"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z" fill-rule="nonzero"/>
+          </svg>
+          <!-- Icon Close -->
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- PANEL NAVIGASI MOBILE -->
+      <div id="mobile-menu"
+        class="fixed top-[60px] left-0 w-full z-50 bg-slate-900/70 backdrop-blur-md text-gray-200 shadow-lg transform scale-y-0 origin-top transition-transform duration-300 md:hidden">
+        <nav class="flex flex-col items-center gap-4 py-6 text-lg">
+          <a href="index.html" class="hover:text-[#6b00d7] transition-colors">???</a>
+          <a href="not_index.html" class="hover:text-[#6b00d7] transition-colors">My Hobbies</a>
+          <a href="not_index.html" class="hover:text-[#6b00d7] transition-colors">Schedules</a>
+          <a href="#" class="hover:text-[#6b00d7] transition-colors">Pengenalan HTML, CSS, JS & Tailwind</a>
+          <a href="2.html" class="hover:text-[#6b00d7] transition-colors">Tata cara pembuatan Web</a>
+          <a href="3.html" class="hover:text-[#6b00d7] transition-colors">Kesan & Pesan</a>
+        </nav>
+      </div>
+
+    </header>
+    <!-- AKHIR HEADER -->
+    <div class="fixed inset-0 bg-cover bg-center w-full h-full z-0" style="background-image: url('./img/bg_1html.jpeg')"><div class="absolute inset-0 bg-slate-950/60 z-10"></div></div>
+    <div class="absolute inset-0 bg-gradient-radial from-transparent via-slate-900/80 to-slate-900 z-15"></div>
+    <div class="relative z-20">
+        
+    <!-- AWAL MAIN -->
+     <div class="min-h-[100vh] flex flex-col">
+      <main class="py-16 sm:py-3 md:ml-[15vw] flex flex-row justify-center items-center">
+        <div class="container mx-auto px-6">      
+            <div><p class="text-center font-bold text-4xl md:text-5xl pt-15 pb-8 bg-gradient-to-r from-[#d8b1ff] via-purple-700 
+         bg-clip-text text-transparent" data-aos="fade-up">Mengenal HTML, CSS, JS dan Tailwind CSS</p></div>
+
+            <div class="flex justify-center flex-wrap gap-y-8 gap-x-4" data-aos="fade-up">
+            <!-- HTML -->
+            <div class="flex flex-col pb-8 transform hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-center mb-4">
+                  <div class="bg-red-300/20 text-red-600 p-3 rounded-full">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg> -->
+                    <div class="hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-6 h-6" role="img" aria-label="HTML icon">
+                        <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="18 16 6 32 18 48" />
+                          <line x2="27" y1="8" x1="38" y2="55" />
+                          <polyline points="46 16 58 32 46 48" />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <h2 class="text-2xl font-semibold ml-4 text-gradient-html">HTML</h2>
+                </div>
+
+            <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-lg 
+                   w-full max-w-[300px] min-h-[120px] flex flex-col justify-between">
+                <div>
+                <p class="text-gray-300 leading-relaxed text-xs md:text-[16px]"> <span class="font-bold">HTML (Hypertext Markup Language)</span>. Bayangkan kamu ingin membangun sebuah robot, maka HMTL ini adalah rangka dari robot tersebut. Pada umumnya, rangka itu terdiri dari kepala dan bagian badan. Begitu juga pada HTML, terdapat Head dan Body. Pada HTML juga lah kita dapat mendefinisikan teks, hyperlink, tautan, gambar, elemen grafis dan tautan. <br> <br>FYI: HTML diperkenalkan oleh tim Berners-Lee pada tahun 1991</p>
+              </div>
+            </div>
+            </div>
+            <!-- akhir html -->
+
+            <!-- CSS -->
+             <div class="flex flex-col pb-8 transform hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-center mb-4">
+                  <div class="bg-green-700/50 text-green-300 p-3 rounded-full">
+                    <!-- CSS icon: clean symmetrical curly braces -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-6 h-6" role="img" aria-label="CSS curly braces icon">
+                      <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Left brace -->
+                        <path d="M50 20
+                                 C30 15, 30 50, 15 55
+                                 C30 60, 30 95, 50 90" />
+                        <!-- Right brace -->
+                        <path d="M78 20
+                                 C98 15, 98 50, 113 55
+                                 C98 60, 98 95, 78 90" />
+                      </g>
+                    </svg>
+                  </div>
+                  <h2 class="text-2xl font-semibold ml-4 text-gradient-css">CSS</h2>
+                </div>
+
+            <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-lg 
+                   w-full max-w-[300px] min-h-[120px] flex flex-col justify-between">
+                <div>
+                <p class="text-gray-300 leading-relaxed text-xs md:text-[16px]"> <span class="font-bold">CSS (Cascading Style Sheet)</span>, namanya persis mendefinisikan fungsi dirinya. Tadi kita menganalogikan HTML sebagai rangka dari sebuah robot, sekarang kita bisa menganalogikann CSS sebagai skin atau tampilan dari si robot yang ingin kita ciptakan. CSS digunakan untuk memperindah tampilan dari HTML kita, mulai dari pengaturan sederhana, sampai pengaturan mendetail. Misalnya yang sederhana, warna teks, ukuran teks, warna background. CSS juga bisa mengatur posisi atau ukuran dari sebuah elemen HTML. </p>
+              </div>
+            </div>
+            </div>
+            <!-- akhir css -->
+
+            <!-- JS -->
+             <div class="flex flex-col pb-8 transform hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-center  mb-4">
+                  <div class="bg-yellow-700/50 text-yellow-300 p-3 rounded-full">
+                    <!-- CSS icon: clean symmetrical curly braces -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-6 h-6">
+                      <path fill="#F7DF1E" d="M1.408 1.408h125.184v125.185H1.408z"/>
+                      <path d="M85.19 108.857c2.538 4.136 5.82 7.17 11.64 7.17 4.89 0 8.013-2.445 8.013-5.82 0-4.05-3.21-5.49-8.61-7.857l-2.97-1.273c-8.58-3.66-14.28-8.25-14.28-17.97 0-8.95 6.83-15.76 17.48-15.76 7.59 0 13.05 2.64 17 9.57l-9.33 5.985c-2.06-3.66-4.29-5.1-7.67-5.1-3.49 0-5.7 2.22-5.7 5.1 0 3.57 2.22 5.01 7.33 7.23l2.97 1.27c10.11 4.35 15.81 8.85 15.81 18.9 0 10.83-8.51 16.76-19.93 16.76-11.18 0-18.4-5.34-21.93-12.33zm-42.9.73c1.89 3.36 3.6 6.21 7.67 6.21 3.93 0 6.42-1.54 6.42-7.53V57.43h11.97v51.09c0 12.39-7.26 18.03-17.86 18.03-9.57 0-15.12-4.95-17.96-10.93z"/>
+                    </svg> -->
+                    <p class="w-6 h-6 justify-center">Js</p>
+
+                  </div>
+                  <h2 class="text-2xl font-semibold ml-4 text-gradient-js">JS - JavaScript</h2>
+                </div>
+
+            <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-lg 
+                   w-full max-w-[300px] min-h-[120px] flex flex-col justify-between">
+                <div>
+                <p class="text-gray-300 leading-relaxed text-xs md:text-[16px]"> <span class="font-bold">JS (JavaScript)</span>. Sekarang robot kita udah berbentuk, udah bisa berdiri, udah bisa bergerak, udah ganteng, cantik udah rapi. Tapi, kalau kita membangun sebuah robot, yang harus kita pikirkan bukan hanya tentang rangka dan penampilannya saja, tapi juga kecerdasannya. Jadi, kita perlukan "otak" untuk robot kita. Beginilah kita analogikan JavaScript. JavaScript adalah seperti otak di balik web kita. JavaScript juga lah yang memungkinkan pengguna dapat berinteraksi dengan web kita. </p>
+              </div>
+            </div>
+            </div>
+            <!-- akhir js -->
+
+            <!-- Tailwind -->
+             <div class="flex flex-col pb-8 transform hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-center mb-4">
+                  <div class="bg-cyan-700/50 text-yellow-300 p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-6 h-6">
+                      <path fill="#38BDF8" d="M64 26c-13.33 0-21.67 6.67-25 20 5-6.67 10.83-9.17 17.5-7.5 3.8.95 6.52 3.72 9.54 6.78 4.9 4.94 10.6 10.7 22.96 10.7 13.33 0 21.67-6.67 25-20-5 6.67-10.83 9.17-17.5 7.5-3.8-.95-6.52-3.72-9.54-6.78C81.06 31.76 75.36 26 63 26h1zM39 56c-13.33 0-21.67 6.67-25 20 5-6.67 10.83-9.17 17.5-7.5 3.8.95 6.52 3.72 9.54 6.78 4.9 4.94 10.6 10.7 22.96 10.7 13.33 0 21.67-6.67 25-20-5 6.67-10.83 9.17-17.5 7.5-3.8-.95-6.52-3.72-9.54-6.78C57.06 61.76 51.36 56 39 56z"/>
+                    </svg>
+                  </div>
+                  <h2 class="text-2xl font-semibold ml-4 text-gradient-tail">Tailwind CSS</h2>
+                </div>
+
+            <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-lg 
+                   w-full max-w-[300px] min-h-[120px] flex flex-col justify-between">
+                <div>
+                <p class="text-gray-300 leading-relaxed text-xs md:text-[16px]"> <span class="font-bold">Tailwind CSS</span>. Bukan ekor angin ya seperti namanya. Tailwind ini adalah framework CSS yang dapat kita gunakan. Tujuannya, untuk empercepat dan mempersingkat proses pembuatan website kita dengan menyediakan kelas utilitas yang dapat kita kustomisasi langsung di dalam HTML, tanpa perlu file CSS yang terpisah.</p>
+              </div>
+            </div>
+            </div>
+            <!-- akhir tailwind -->
+
+            </div>
+        </div>
+      </main>
+    <!-- AKHIR MAIN -->
+     <footer class="mt-auto relative z-20 md:ml-[15vw] text-center py-4 text-gray-400 text-sm" data-aos="fade-up">
+              <div class="social-icons mb-2 text-2xl">
+                <a href="https://twitter.com/RavenNDove" target="_blank"><i class="fab fa-twitter pr-2"></i></a>
+                <a href="https://instagram.com/rizkyfadhillah1015" target="_blank"><i class="fab fa-instagram pr-2"></i></a>
+                <a href="https://www.linkedin.com/in/m-rizky-fadhillah-7a0635363/" target="_blank"><i class="fab fa-linkedin-in pr-2"></i></a>
+                <a href="https://github.com/SecrizMRF" target="_blank" aria-label="GitHub"><i class="fab fa-github pr-2"></i></a>
+              </div>
+              <p>© 2025 Kyra was here</p>
+      </footer>
+      </div>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 50,
+        });
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconHamburger = document.getElementById("icon-hamburger");
+        const iconClose = document.getElementById("icon-close");
+
+        menuBtn.addEventListener("click", () => {
+          // Toggle menu terbuka/tertutup
+          const isNowOpen = !mobileMenu.classList.contains("scale-y-100");
+          mobileMenu.classList.toggle("scale-y-100", isNowOpen);
+          mobileMenu.classList.toggle("scale-y-0", !isNowOpen);
+        
+          // Toggle ikon
+          iconHamburger.classList.toggle("hidden", isNowOpen);
+          iconClose.classList.toggle("hidden", !isNowOpen);
+        });
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyraaaVi Profile Web Page</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="profile">
+          <div class="prof-pic">
+            <img src="img/sidepic.jpg" alt="Foto Profil">
+          </div>
+          <p>KyraaaVi</p>
+        </div>
+        <nav class="menu">
+          <a href="index.html">???</a>
+          <a href="#hobbies">My Hobbies</a>
+          <a href="#jadwal">Schedules</a>
+          <a href="1.html" target="_blank">Pengenalan HTML, CSS, JS & Tailwind</a>
+          <a href="2.html" target="_blank">Tata cara pembuatan Web</a>
+          <a href="3.html" target="_blank">Kesan & Pesan</a>
+          <!-- <a href="https://x.com/RavenNDove" target="_blank">X / Twitter</a>
+          <a href="https://wa.me/+6285157813566" target="_blank">Contact</a> -->
+        </nav>
+
+      </aside>
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Tombol hamburger -->
+        <button class="hamburger" id="hamburger">☰</button>
+        <!-- <section id="Intro"> -->
+          <div class="text-container">
+            <div class="intro" data-aos="fade-down">
+              <h1>Nama saya <br>
+                <span>M. Rizky Fadhillah</span>
+              </h1>
+              <!-- <button href="documents/Portofolio.pdf" download="documents/Portofolio.pdf" class="btn">View Portfolio</button> -->
+               <a href="#" onclick="openAndDownloadPDF()" class="button">View Portfolio</a>
+            </div>
+            <div class="bio" data-aos="fade-right">
+              <!-- <h2>M. Rizky Fadhillah</h2> -->
+              <p>
+                <strong>NIM: 241401055</strong>
+              </p>
+              <p><strong>KOM: A</strong></p>
+              <!-- <p> Hello! I'm a Computer Science major student at the Universitas Sumatera Utara (USU).
+                 Aku suka untuk mempelajari hal-hal baru, karena aku selalu memegang prinsip,<br>
+                "There's always some space for improvement."<br> jadi aku selalu mencari celah,
+                di mana titik kelemahanku.</p> -->
+              <p> 
+                Hai!! Aku adalah seorang Mahasiswa prodi Ilmu Komputer di Universitas Sumatera Utara, atau USU.
+                Aku suka untuk mempelajari hal-hal baru, karena aku selalu memegang prinsip,
+              </p>
+              <p class="quotes">"There's always some space for improvement."</p>
+              <p> 
+                jadi aku selalu mencari celah,
+                di mana titik kelemahanku.
+              </p>
+            </div> 
+          </div>
+          <div class = "main-pic-container" data-aos="fade-left">
+          <img src="img/bio.png" alt="Foto Profil" class="main-pic">
+          </div>
+        </div>
+        
+        <!-- Section Hobbies dengan Cards -->
+        <section id="hobbies" class="hobbies-section" data-aos="fade-left">
+          <h2>Hobi-hobi Saya</h2>
+          <div class="hobby-cards" >
+            <div class="hobby-card">
+              <img src="img/coding.jpg" alt="Coding">
+              <h3>Coding</h3>
+              <p>Aku sangat tertarik dengan pemrograman, dan aku selalu bertanya-tanya, "Ih! Gimana sih mereka bisa buat itu?". Dan aku berjanji ke diriku sendiri, Aku bakalan buat yang lebih bagus suatu saat nanti!</p>
+            </div>
+            <div class="hobby-card">
+              <img src="img/music.jpg" alt="Music">
+              <h3>Music</h3>
+              <p>Aku adalah pendengar yang baik, percayalah. Dengerin musik itu salah satu kesenangan bagi aku.</p>
+            </div>
+            <div class="hobby-card">
+              <img src="img/gaming.png" alt="Gaming">
+              <h3>Game</h3>
+              <p>Dan game.. udah pasti lah ya. Main game ini adalah hal untuk membuang-buang waktu paling menyenangkan. Walau main game kalau bisa curi-curi waktu aja (tugas numpuk lhoh ya).</p>
+            </div>
+          </div>
+        </section>
+        
+        <main class="container mx-auto px-6 py-12 " data-aos="fade-left">
+          <section id="jadwal" class="section-content ">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Jadwal Kuliah</h2>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-400 to-purple-400 text-white p-6">
+                        <h3 class="text-xl font-semibold">Semester 3</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full p-6">
+                            <thead class="bg-gray-50">
+                              <tr>
+                                    <th>Hari</th>
+                                    <th>Waktu</th>
+                                    <th>Mata Kuliah</th>
+                                    <th>Ruangan</th>
+                                    <th>Dosen</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Senin</td>
+                                    <td>10:30 - 12:10</td>
+                                    <td>Sastra & Perfilman</td>
+                                    <td>O.103</td>
+                                    <td>Arie Azhari Nasution S.S., M.A.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Selasa</td>
+                                    <td>08:50 - 10:30</td>
+                                    <td>IELTS Preparation</td>
+                                    <td>Ruang 101</td>
+                                    <td>Drs. Yulianus Harefa GradDipEd TESOL., MEd TESOL</td>
+                                </tr>
+                                <tr>
+                                    <td>Rabu</td>
+                                    <td>08:00 - 10:30</td>
+                                    <td>Pemrograman Web</td>
+                                    <td>Ruang 103</td>
+                                    <td>Dr. Dewi Sartika Br Ginting S.Kom., M.Kom</td>
+                                </tr>
+                                <tr>
+                                  <td>Rabu</td>
+                                  <td>14:40 - 17:10</td>
+                                  <td>Basis Data</td>
+                                    <td>Ruang 103</td>
+                                    <td>Insidini Fawwaz M.Kom</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-gray-800">Rabu</td>
+                                    <td>15:30 - 17:10</td>
+                                    <td>Etika Profesi</td>
+                                    <td>Ruang 101</td>
+                                    <td>Dr. Ir. Elviawaty Muisa Zamzami S.T., M.T., M.M., IPU</td>
+                                  </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-gray-800">Jumat</td>
+                                    <td>08:00 - 10:30</td>
+                                    <td>Wirausaha Digital</td>
+                                    <td>Ruang 104</td>
+                                    <td>Dr. T. Henny Febriana Harumy S.Kom., M.Kom</td>
+                                </tr>
+                                <tr>
+                                  <td class="px-6 py-4 font-medium text-gray-800">Jumat</td>
+                                  <td>13:50 - 16:20</td>
+                                    <td>Struktur Data</td>
+                                    <td>Ruang 101</td>
+                                    <td>Anandhini Medianty Nababan S.Kom., M.T</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-gray-800">-</td>
+                                    <td><i>belum diset</i></td>
+                                    <td>Praktikum Basis Data</td>
+                                    <td>-</td>
+                                    <td>Insidini Fawwaz M.Kom</td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td><i>belum diset</i></td>
+                                    <td>Praktikum Pemprograman Web</td>
+                                    <td>-</td>
+                                    <td>Dr. Dewi Sartika Br Ginting S.Kom., M.Kom</td>
+                                </tr>
+                                <tr>
+                                  <td>-</td>
+                                    <td><i>belum diset</i></td>
+                                    <td>Praktikum Struktur Data</td>
+                                    <td>-</td>
+                                    <td>Insidini Fawwaz M.Kom</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                </div>
+            </div>
+        </section>
+      </main>
+      
+      </main>
+
+      <footer>
+        <div class="social-icons">
+          <a href="https://twitter.com/RavenNDove" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/rizkyfadhillah1015" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/m-rizky-fadhillah-7a0635363/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/SecrizMRF" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p>© 2024 Kyra was here</p>
+      </footer>
+
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+
+</html>
+
